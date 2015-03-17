@@ -12,7 +12,8 @@ import android.view.SurfaceView;
 import android.view.SurfaceHolder.Callback;
 
 /*
- * ¼Ì³ĞsurfaceView,ÊµÏÖsurfaceholder°üÏÂµÄcallback½Ó¿Ú£¨»Øµ÷º¯Êı£©
+ * ç»§æ‰¿surfaceView,å®ç°surfaceholderåŒ…ä¸‹çš„callbackæ¥å£ï¼ˆå›è°ƒå‡½æ•°ï¼‰
+ * Callbackæ¥å£ï¼šä½¿ç”¨çš„SurfaceViewçš„æ—¶å€™ï¼Œä¸€èˆ¬æƒ…å†µä¸‹è¦å¯¹å…¶è¿›è¡Œåˆ›å»ºï¼Œé”€æ¯ï¼Œæ”¹å˜æ—¶çš„æƒ…å†µè¿›è¡Œç›‘è§†.
  * */
 public class Myview extends SurfaceView implements Callback,OnTouchListener {
 
@@ -21,36 +22,33 @@ public class Myview extends SurfaceView implements Callback,OnTouchListener {
 	
 	public Myview(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		getHolder().addCallback(this);//»ñÈ¡»Øµ÷º¯Êı
+		getHolder().addCallback(this);//è·å–å›è°ƒå‡½æ•°
 		paint.setColor(Color.BLUE);
 		paint.setTextSize(30);
-		paint.setStyle(Style.STROKE);//¿ÕĞÄ
+		paint.setStyle(Style.STROKE);//ç©ºå¿ƒ
 		paint.setAntiAlias(true);
 		setOnTouchListener(this);
 	}
 	public void draw(){
-		Canvas canvas = getHolder().lockCanvas();//Ëø¶¨»­²¼£¬·µ»ØÍ¬Ò»¸ö»­²¼¡£
+		Canvas canvas = getHolder().lockCanvas();//é”å®šç”»å¸ƒï¼Œè¿”å›åŒä¸€ä¸ªç”»å¸ƒã€‚
 		canvas.drawColor(Color.WHITE);
 		canvas.drawPath(path, paint);
 		getHolder().unlockCanvasAndPost(canvas);
 	}
 	public void clear(){
-		path.reset();//ÖØÖÃ»­²¼¡£
+		path.reset();//é‡ç½®ç”»å¸ƒã€‚
 		draw();
 	}
 	public void surfaceChanged(SurfaceHolder arg0, int arg1, int arg2, int arg3) {
 		// TODO Auto-generated method stub
-
 	}
-
+	//surfaceåˆ›å»ºæ—¶è°ƒç”¨
 	public void surfaceCreated(SurfaceHolder holder) {
-		draw();
-
+		draw();//å³ä¾¿æˆ‘ä»¬è¿˜æ²¡å¼€ç”»ï¼Œç”¨äºç”»å¸ƒåˆå§‹åŒ–ï¼Œå¦‚èƒŒæ™¯é¢œè‰²ã€‚
 	}
 
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		// TODO Auto-generated method stub
-
 	}
 	public boolean onTouch(View v, MotionEvent event) {
 		switch(event.getAction()){
