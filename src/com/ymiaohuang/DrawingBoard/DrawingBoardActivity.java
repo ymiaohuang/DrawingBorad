@@ -7,11 +7,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 /*
- * »­²¼
- * ÔÚ²¼¾ÖÎÄ¼şÖĞÌí¼ÓÒ»¸ö×Ô¶¨Òå×é¼şMyView¼Ì³ĞsurfaceView¡£
- * Í¨¹ıCallback½Ó¿Ú¿ÉÒÔ²Ù×÷surfaceView¡£
- * MyViewÖĞ£¬Òª¶¨ÒåºÃpaint£¬path£¬canvas£¬²¢ÉèÖÃºÃÊôĞÔ¡£
- * ¶¨ÒåºÃsetOnTouchListener()£ºÉèÖÃ´¥Ãş¼àÌıÆ÷£¬¼àÌıMoTionÊÖÊÆÊÂ¼ş¡£
+ * ç”»å¸ƒ
+ * åœ¨å¸ƒå±€æ–‡ä»¶ä¸­æ·»åŠ ä¸€ä¸ªè‡ªå®šä¹‰ç»„ä»¶MyViewç»§æ‰¿surfaceViewã€‚
+ * é€šè¿‡Callbackæ¥å£å¯ä»¥æ“ä½œsurfaceViewã€‚
+ * MyViewä¸­ï¼Œè¦å®šä¹‰å¥½paintï¼Œpathï¼Œcanvasï¼Œå¹¶è®¾ç½®å¥½å±æ€§ã€‚
+ * å®šä¹‰å¥½setOnTouchListener()ï¼šè®¾ç½®è§¦æ‘¸ç›‘å¬å™¨ï¼Œç›‘å¬MoTionæ‰‹åŠ¿äº‹ä»¶ã€‚
  * path.lineTo(event.getX(), event.getY());
  * canvas.drawPath(path, paint);
  * 
@@ -34,8 +34,5 @@ public class DrawingBoardActivity extends Activity {
 			}
 		});
     }
-    public boolean OnCreateOptionsMenu(Menu menu){
-    	getMenuInflater().inflate(R.menu.main, menu);
-    	return true;
-    }
+
 }
